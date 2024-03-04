@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:prayroz/common_widget/round_button.dart';
 
-
 class WelcomeView extends StatefulWidget {
   const WelcomeView({Key? key}) : super(key: key);
 
@@ -15,7 +14,7 @@ class _WelcomeViewState extends State<WelcomeView> {
     var media = MediaQuery.of(context).size;
     return Scaffold(
       body: Column(
-        children: [
+        children: <Widget>[
           Expanded(
             child: Container(
               alignment: Alignment.center,
@@ -31,28 +30,49 @@ class _WelcomeViewState extends State<WelcomeView> {
               ),
             ),
           ),
-        SizedBox(height: media.width*0.1),
+
+          SizedBox(height: media.width * 0.01),
+
+          Container(
+            height: 100,
+            width: 250,
+            // alignment: Alignment.center,
+            // margin: EdgeInsets.only(bottom: 10),
+            child: Text(
+              "Bringing Blessings to Your Doorstep: Your Trusted Prasad Delivery Service",
+              textAlign: TextAlign.center,
+              style: TextStyle(color: Colors.grey.shade500, fontSize: 14, fontWeight: FontWeight.w500),
+            ),
+          ),
+
+
 
           // => Login Button here using separate class
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25),
-            child: RoundButton(title: "Login", onPressed: (){},
-          ),
+            child: RoundButton(
+              title: "Login",
+              onPressed: () {},
+            ),
           ),
 
-
-          SizedBox(height: media.width*0.05,),
+          SizedBox(
+            height: media.width * 0.05,
+          ),
 
           // => create account button using
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 25),
-            child: RoundButton(title: "Create an Account", onPressed: (){},
+            child: RoundButton(
+              title: "Create an Account",
+              onPressed: () {},
+            ),
           ),
+          SizedBox(
+            height: media.width * 0.2,
           ),
-          SizedBox(height: media.width*0.2,),
         ],
       ),
     );
   }
 }
-
